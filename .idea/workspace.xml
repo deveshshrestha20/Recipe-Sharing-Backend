@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="Upto getting the specific Recipe api endpoint done">
+    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="All CRUD operations done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/recipe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/oauth2.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/oauth2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,7 @@
       <workItem from="1751900927934" duration="32000" />
       <workItem from="1751902424333" duration="1531000" />
       <workItem from="1751954043217" duration="2824000" />
-      <workItem from="1751957004097" duration="3637000" />
+      <workItem from="1751957004097" duration="6645000" />
     </task>
     <task id="LOCAL-00001" summary="Upto Delete Recipe Completed">
       <option name="closed" value="true" />
@@ -141,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751958535190</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="All CRUD operations done">
+      <option name="closed" value="true" />
+      <created>1751963487001</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751963487001</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Upto Delete Recipe Completed" />
     <MESSAGE value="Upto getting the specific Recipe api endpoint done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upto getting the specific Recipe api endpoint done" />
+    <MESSAGE value="All CRUD operations done" />
+    <option name="LAST_COMMIT_MESSAGE" value="All CRUD operations done" />
   </component>
 </project>

@@ -1,6 +1,8 @@
 from fastapi import HTTPException,status
 from fastapi.params import Depends
 from fastapi.security import OAuth2PasswordRequestForm
+from starlette.responses import Response
+
 from app.database.session import get_db
 from sqlalchemy.orm import Session
 from app.core import oauth2
@@ -41,7 +43,7 @@ def register_user(user_data: UserCreate, db: Session):
         return new_user
 
 
-def login_user(form_data: OAuth2PasswordRequestForm, db: Session = Depends(get_db)):
+def login_user(form_data: OAuth2PasswordRequestForm, response : Response, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == form_data.username).first()
     if not user:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail= 'Invalid Credentials')
@@ -49,11 +51,16 @@ def login_user(form_data: OAuth2PasswordRequestForm, db: Session = Depends(get_d
     if not verify_password(form_data.password,str(user.hashed_password)):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='Invalid Credentials')
 
-    #Returning a JWT Token
+    #Returning a JWT Access Token and Refresh Token
 
     access_token = oauth2.create_access_token(data = {"sub": str(user.id)})
+    # Server returns RefreshToken in a HTTPOnly Cookie (set_cookie)
+    refresh_token = oauth2.create_refresh_token(data = {"sub": str(user.id)})
+
+    response.set_cookie(key="refresh_token", value=refresh_token, httponly=True,secure=False, max_age=7 * 24 * 60 * 60)
 
     return {'access_token': access_token, "token_type": "bearer"}
+
 
 
 

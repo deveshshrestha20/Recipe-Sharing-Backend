@@ -1,8 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from starlette import status
-
-from app.schemas import RecipeOut
+from starlette.responses import Response
 from app.schemas.user import UserCreate, UserOut, Token
 from app.services.auth_service import register_user, login_user
 import traceback
@@ -21,8 +19,8 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail="Email already exists")
 
 @router.post("/login", response_model = Token)
-def login(form_data :OAuth2PasswordRequestForm = Depends(),db: Session = Depends(get_db)):
-    return login_user(form_data, db)
+def login(response: Response,form_data :OAuth2PasswordRequestForm = Depends(),db: Session = Depends(get_db)):
+    return login_user(form_data,response, db)
 
 
 
