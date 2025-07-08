@@ -5,12 +5,15 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 from sqlalchemy.sql.functions import current_user
 from starlette import status
+from starlette.responses import Response
 
 from app.models import Recipe, User
 from app.models.recipe import Recipe
 
 from app.schemas import RecipeCreate
 from app.models.recipe import Recipe
+from app.schemas.recipe import RecipeUpdate
+
 
 def create_new_recipe(recipe_data: RecipeCreate, user_id: int,db: Session ):
     # Convert Pydantic -> SQLAlchemy model
@@ -23,12 +26,25 @@ def create_new_recipe(recipe_data: RecipeCreate, user_id: int,db: Session ):
 def get_all_recipes(db: Session) -> list[type[Recipe]]:
     return db.query(Recipe).all()
 
+def get_specific_recipe(recipe_id: int,user_id:int, db: Session):
+    recipe = db.query(Recipe).filter(Recipe.id == recipe_id).first()
+
+    if recipe is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
+    return recipe
+
+
+def update_recipe(recipe_id: int,recipe_data: RecipeUpdate, user_id: int,db: Session):
+    recipe = db.query(Recipe).filter(Recipe.id == recipe_id).first()
+
+
+
 def delete_specific_recipe(recipe_id: int,user_id:int, db: Session):
     # Fetching the recipe
     recipe = db.query(Recipe).filter(Recipe.id == recipe_id).first()
 
     if recipe is None:
-        raise HTTPException(status_code=status.HTTP_204_NO_CONTENT, detail="Recipe not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
 
     # Comparing the ids to make sure that only the chef who created the recipe can delete it
     if recipe.chef_id != user_id:
@@ -36,11 +52,6 @@ def delete_specific_recipe(recipe_id: int,user_id:int, db: Session):
 
     db.delete(recipe)
     db.commit()
-    db.refresh(recipe)
+    return Response(status.HTTP_204_NO_CONTENT)
 
 
-
-
-
-
-    recipe.commit()

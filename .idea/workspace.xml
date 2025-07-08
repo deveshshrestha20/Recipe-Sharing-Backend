@@ -4,32 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/FastAPIProject1 Recipe Sharing.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/oauth2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/init_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database/session.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/recipe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
+    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="Upto Delete Recipe Completed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/recipe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;deveshshrestha20&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/deveshshrestha20/Recipe-Sharing-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;cf34103f-0ad4-43de-9dd8-531c4d59dc66&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -122,10 +113,34 @@
       <workItem from="1751873258173" duration="3291000" />
       <workItem from="1751876831388" duration="5400000" />
       <workItem from="1751900927934" duration="32000" />
+      <workItem from="1751902424333" duration="1531000" />
+      <workItem from="1751954043217" duration="2824000" />
+      <workItem from="1751957004097" duration="1368000" />
     </task>
+    <task id="LOCAL-00001" summary="Upto Delete Recipe Completed">
+      <option name="closed" value="true" />
+      <created>1751902572656</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751902572656</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Upto Delete Recipe Completed">
+      <option name="closed" value="true" />
+      <created>1751902587369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751902587369</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upto Delete Recipe Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upto Delete Recipe Completed" />
   </component>
 </project>

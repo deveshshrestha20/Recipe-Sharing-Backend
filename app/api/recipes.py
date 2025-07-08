@@ -11,7 +11,8 @@ from app.schemas.recipe import RecipeOut, RecipeCreate
 
 
 from app.database.session import get_db
-from app.services.recipe_service import create_new_recipe, get_all_recipes, delete_specific_recipe
+from app.services.recipe_service import create_new_recipe, get_all_recipes, delete_specific_recipe, get_specific_recipe, \
+    update_recipe
 
 router = APIRouter(prefix="/recipes", tags=["Recipe"])
 
@@ -25,7 +26,14 @@ def create_recipe(recipe: RecipeCreate, db: Session = Depends(get_db),current_us
 def fetch_recipe(db: Session = Depends(get_db)):
     return get_all_recipes(db)
 
+@router.get("/{recipe_id}", status_code = status.HTTP_200_OK, response_model = RecipeOut)
+def fetch_specific_recipe(recipe_id: int,db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    return get_specific_recipe(recipe_id,current_user.id,db)
 
 @router.delete("/{recipe_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_recipe(recipe_id:int ,db: Session = Depends(get_db),current_user: User = Depends(get_current_user)):
     return delete_specific_recipe(recipe_id, current_user.id,db)
+
+@router.put("/{recipe_id}", status_code=status.HTTP_200_OK, response_model = RecipeOut)
+def update(recipe_id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    return update_recipe(recipe_id, current_user.id,db)
