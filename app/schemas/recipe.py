@@ -35,3 +35,5 @@ class RecipeUpdate(BaseModel):
     ingredients: Optional[str]
     description: Optional[str]
     image_url: Optional[str]
+
+    model_config = ConfigDict(from_attributes=True)

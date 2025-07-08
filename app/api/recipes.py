@@ -7,8 +7,7 @@ from starlette import status
 from app.core.oauth2 import get_current_user
 from app.models import User
 
-from app.schemas.recipe import RecipeOut, RecipeCreate
-
+from app.schemas.recipe import RecipeOut, RecipeCreate, RecipeUpdate
 
 from app.database.session import get_db
 from app.services.recipe_service import create_new_recipe, get_all_recipes, delete_specific_recipe, get_specific_recipe, \
@@ -35,5 +34,5 @@ def delete_recipe(recipe_id:int ,db: Session = Depends(get_db),current_user: Use
     return delete_specific_recipe(recipe_id, current_user.id,db)
 
 @router.put("/{recipe_id}", status_code=status.HTTP_200_OK, response_model = RecipeOut)
-def update(recipe_id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
-    return update_recipe(recipe_id, current_user.id,db)
+def update(recipe_id: int, recipe_data: RecipeUpdate , db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    return update_recipe(recipe_id,recipe_data, current_user.id,db)
