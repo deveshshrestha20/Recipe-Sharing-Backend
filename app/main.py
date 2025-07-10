@@ -3,6 +3,7 @@ from app.database.init_db import create_tables
 from fastapi import FastAPI
 from app.api.auth import router as auth_router
 from app.api.recipes import router as recipes_router
+from app.api.likes import router as likes_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI ):
@@ -15,6 +16,7 @@ app = FastAPI(title = "Recipe Sharing Platform",lifespan=lifespan)
 
 app.include_router(auth_router)
 app.include_router(recipes_router)
+app.include_router(likes_router)
 
 @app.get("/")
 async def root():

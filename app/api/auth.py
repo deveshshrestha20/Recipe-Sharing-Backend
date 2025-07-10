@@ -11,10 +11,9 @@ router = APIRouter()
 @router.post("/register", response_model=UserOut)
 def register(user: UserCreate, db: Session = Depends(get_db)):
     try:
-        # print("🔥 Received user data:", user)
         return register_user(user, db)
-    except Exception as e:
-        # print("🔥 Registration error:", e)
+    except Exception :
+
         traceback.print_exc()   # <-- This will print full traceback in console
         raise HTTPException(status_code=500, detail="Email already exists")
 
