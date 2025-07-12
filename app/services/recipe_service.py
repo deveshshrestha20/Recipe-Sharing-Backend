@@ -1,18 +1,15 @@
 from fastapi import HTTPException
 from typing import List
-
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from sqlalchemy.sql.functions import current_user
+from sqlalchemy import func
 from starlette import status
 from starlette.responses import Response
-
-from app.models import Recipe, User
-from app.models.recipe import Recipe
-
+from app.models import Recipe, User, Likes
 from app.schemas import RecipeCreate
 from app.models.recipe import Recipe
-from app.schemas.recipe import RecipeUpdate
+from app.schemas.recipe import RecipeUpdate, RecipeWithLikes
+
 
 
 def create_new_recipe(recipe_data: RecipeCreate, user_id: int,db: Session ):
@@ -23,15 +20,43 @@ def create_new_recipe(recipe_data: RecipeCreate, user_id: int,db: Session ):
     db.refresh(new_recipe)
     return new_recipe
 
-def get_all_recipes(db: Session) -> list[type[Recipe]]:
-    return db.query(Recipe).all()
+def get_all_recipes(db: Session):
+
+    # recipes = db.query(Recipe).all()
+    recipes = db.query(Recipe, func.count(Likes.recipe_id).label('likes_count')).join(Likes, Likes.recipe_id == Recipe.id,isouter=True).group_by(Recipe.id).all()
+
+    return [
+        RecipeWithLikes(
+            id=recipe.id,
+            title=recipe.title,
+            ingredients=recipe.ingredients,
+            description=recipe.description,
+            image_url=recipe.image_url,
+            chef_id=recipe.chef_id,
+            likes_count=likes_count
+        )
+        for recipe, likes_count in recipes
+    ]
 
 def get_specific_recipe(recipe_id: int,user_id:int, db: Session):
-    recipe = db.query(Recipe).filter(Recipe.id == recipe_id).first()
 
-    if recipe is None:
+    recipes = db.query(Recipe, func.count(Likes.recipe_id).label('likes_count')).join(Likes, Likes.recipe_id == Recipe.id,isouter=True).group_by(Recipe.id).filter(Recipe.id == recipe_id).first()
+
+    if recipes is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
-    return recipe
+
+    recipe, likes_count = recipes
+
+    return RecipeWithLikes(
+            id=recipe.id,
+            title=recipe.title,
+            ingredients=recipe.ingredients,
+            description=recipe.description,
+            image_url=recipe.image_url,
+            chef_id=recipe.chef_id,
+            likes_count=likes_count
+        )
+
 
 
 def update_recipe(recipe_id: int,recipe_data: RecipeUpdate, user_id: int,db: Session):

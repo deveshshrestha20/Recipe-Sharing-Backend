@@ -8,6 +8,13 @@ from app.schemas.like import Like
 
 def like(recipe_id: int,like_data: Like,user_id: int, db: Session):
 
+
+
+    recipe = db.query(Likes).filter(Likes.recipe_id == recipe_id).first()
+
+    if recipe is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
+
     # like_data is a schema, Likes is a Model
     # Likes.recipe_id is the actual column in the database. recipe_id is the value from the URL path.
     like_query = db.query(Likes).filter(Likes.recipe_id == recipe_id, Likes.user_id == user_id)

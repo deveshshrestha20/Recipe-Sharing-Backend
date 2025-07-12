@@ -30,6 +30,17 @@ class RecipeOut(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
+class RecipeWithLikes(BaseModel):
+    id: int
+    title: str
+    ingredients: str
+    description: str
+    image_url: str
+    chef_id: int
+    likes_count: int  # <- this replaces "Like"
+
+    model_config = ConfigDict(from_attributes=True)
+
 class RecipeUpdate(BaseModel):
     title: Optional[str]
     ingredients: Optional[str]
