@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="Refresh Tokens Created">
+    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="Likes Count included in the get specific and get all recipes">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/like_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/like_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/recipe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/init_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +127,9 @@
       <workItem from="1752136473708" duration="5445000" />
       <workItem from="1752144781135" duration="1088000" />
       <workItem from="1752244349597" duration="2731000" />
-      <workItem from="1752319491678" duration="5293000" />
+      <workItem from="1752319491678" duration="6682000" />
+      <workItem from="1752389593467" duration="6132000" />
+      <workItem from="1752396153885" duration="4315000" />
     </task>
     <task id="LOCAL-00001" summary="Upto Delete Recipe Completed">
       <option name="closed" value="true" />
@@ -167,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751966644829</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Likes Count included in the get specific and get all recipes">
+      <option name="closed" value="true" />
+      <created>1752361351409</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752361351409</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +190,7 @@
     <MESSAGE value="Upto getting the specific Recipe api endpoint done" />
     <MESSAGE value="All CRUD operations done" />
     <MESSAGE value="Refresh Tokens Created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refresh Tokens Created" />
+    <MESSAGE value="Likes Count included in the get specific and get all recipes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Likes Count included in the get specific and get all recipes" />
   </component>
 </project>
