@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="Likes Count included in the get specific and get all recipes">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="ignore added">
+      <change afterPath="$PROJECT_DIR$/app/api/comments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/comment_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/recipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/like_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/like_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/recipe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +137,9 @@
       <workItem from="1752319491678" duration="6682000" />
       <workItem from="1752389593467" duration="6132000" />
       <workItem from="1752396153885" duration="4315000" />
+      <workItem from="1752403558884" duration="2263000" />
+      <workItem from="1752468753812" duration="186000" />
+      <workItem from="1752490896497" duration="10029000" />
     </task>
     <task id="LOCAL-00001" summary="Upto Delete Recipe Completed">
       <option name="closed" value="true" />
@@ -179,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752361351409</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ignore added">
+      <option name="closed" value="true" />
+      <created>1752403705719</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752403705719</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +209,7 @@
     <MESSAGE value="All CRUD operations done" />
     <MESSAGE value="Refresh Tokens Created" />
     <MESSAGE value="Likes Count included in the get specific and get all recipes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Likes Count included in the get specific and get all recipes" />
+    <MESSAGE value="ignore added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore added" />
   </component>
 </project>

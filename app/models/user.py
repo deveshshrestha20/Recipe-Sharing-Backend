@@ -10,6 +10,7 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     is_chef = Column(Boolean, nullable=False, default=False)
     recipes = relationship("Recipe", back_populates="chef")
+    comments = relationship("Comments", back_populates="user")
 
 
 

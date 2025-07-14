@@ -3,6 +3,7 @@ from starlette.responses import Response
 from sqlalchemy.orm import Session
 from app.models import Likes
 from app.schemas.like import Like
+from app.models.recipe import Recipe
 
 
 
@@ -10,7 +11,7 @@ def like(recipe_id: int,like_data: Like,user_id: int, db: Session):
 
 
 
-    recipe = db.query(Likes).filter(Likes.recipe_id == recipe_id).first()
+    recipe = db.query(Recipe).filter(Recipe.id == recipe_id).first()
 
     if recipe is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Recipe not found")
