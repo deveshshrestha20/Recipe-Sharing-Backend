@@ -2,9 +2,12 @@ from typing import Optional
 
 from pydantic import EmailStr,ConfigDict
 from pydantic import BaseModel
+import enum
 
 
-
+class RoleEnum(str,enum.Enum):
+    admin = "admin"
+    user = "user"
 
 class UserCreate(BaseModel):
 
@@ -21,6 +24,7 @@ class UserOut(BaseModel):
     username: str
     email: EmailStr
     is_chef: bool
+    role: RoleEnum
 
     model_config = ConfigDict(from_attributes=True)
 

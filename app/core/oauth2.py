@@ -70,8 +70,36 @@ def get_current_user(
 
     if user is None:
         raise credentials_exception
+    # print(type(user))
 
     return user  #  Full User object returned
+
+
+def get_admin_user(
+        token: str = Depends(oauth2_scheme),
+        db: Session = Depends(get_db)
+):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Invalid credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+
+    token_data = verify_access_token(token, credentials_exception)
+
+    # Convert ID from string to integer
+    user = db.query(User).filter(User.id == int(token_data.id)).first()
+
+    if user is None:
+        raise credentials_exception
+    # print(type(user))
+
+    if user.role == "admin":
+        return user
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="You are not an admin"
+        )
 
 
 def create_refresh_token(data: dict, expires_delta:timedelta | None = None):
@@ -84,7 +112,12 @@ def create_refresh_token(data: dict, expires_delta:timedelta | None = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-
+def require_role(required_role: str):
+    def checker(user: User = Depends(get_current_user)):
+        if user.role != required_role:
+            raise HTTPException(status_code=403, detail="Insufficient permissions")
+        return user
+    return checker
 
 
 

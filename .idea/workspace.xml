@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4174f1b6-b9ad-40f2-ba6a-eb454d32bc65" name="Changes" comment="ignore added">
-      <change afterPath="$PROJECT_DIR$/app/api/comments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/comment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/comment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/comment_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/admin_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/recipes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/recipes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/oauth2.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/oauth2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/recipe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/recipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/recipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/like_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/like_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/recipe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/recipe_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +136,8 @@
       <workItem from="1752403558884" duration="2263000" />
       <workItem from="1752468753812" duration="186000" />
       <workItem from="1752490896497" duration="10029000" />
+      <workItem from="1752617567874" duration="5978000" />
+      <workItem from="1752627538942" duration="11820000" />
     </task>
     <task id="LOCAL-00001" summary="Upto Delete Recipe Completed">
       <option name="closed" value="true" />

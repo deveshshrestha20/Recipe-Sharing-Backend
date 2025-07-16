@@ -13,4 +13,4 @@ class Recipe(Base):
 
     chef_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'))
     chef = relationship("User", back_populates="recipes")
-    comments = relationship("Comments", back_populates="recipe")
+    comments = relationship("Comments", back_populates="recipe",cascade="all, delete-orphan")
